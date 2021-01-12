@@ -1,15 +1,19 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { BookContext } from '../contexts/BookContext';
+import BookDetails from "../components/BookDetails";
+
 
 const BookList = () => { 
-    return ( 
+    const { books } = useContext(BookContext)
+    return  books.length ? ( 
       <div className="book-list">
         <ul>
-          <li>the way of kings</li>
-          <li>the name of the wind</li>
-          <li>the final empire</li>
+          {books.map(book => {
+            return (<BookDetails book={book} key={book.id}/>)
+          })}
         </ul>
       </div>
-    );
+    ) : (<div className="empty"> No Book to be reading, free time </div>)
 }
  
 export default BookList;

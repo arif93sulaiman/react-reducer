@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react'
-import { BookContext } from '../contexts/bookContext'
+import { BookContext } from '../contexts/BookContext'
 
 const BookForm = () => {
     const {dispatch} = useContext(BookContext)
@@ -14,13 +14,11 @@ const BookForm = () => {
         setTitle('')
     }
     return (
-        <div>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="book title" value={title} onChange={(e) => setTitle(e.target.value)} required/>
+                <input type="text" value={title} placeholder="book title" onChange={(e) => setTitle(e.target.value)} required/>
                 <input type="text" placeholder="author" value={author} onChange={(e) => setAuthor(e.target.value)} required/>
-                <input type="submit">Add Book</input>
+                <button type="submit">Add Book</button>
             </form>
-        </div>
     )
 }
 

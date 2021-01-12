@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
-import { bookReducer } from '../reducer/bookReducer'
+import { bookReducer } from "../reducer/bookReducer";
+
 
 const BookDetails = ({book}) => {
     const {dispatch} = useContext(bookReducer)
