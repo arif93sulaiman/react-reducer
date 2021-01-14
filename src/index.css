@@ -25,7 +25,10 @@ nav ul li {
 }
 .book-list {
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
+}
+div.book-list ul li:hover {
+  color: red;
 }
 .book-list ul{
   padding: 0;
