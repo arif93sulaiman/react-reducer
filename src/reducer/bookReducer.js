@@ -1,4 +1,4 @@
-import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
 
 
 export const bookReducer = (state, action) => {
@@ -7,10 +7,10 @@ export const bookReducer = (state, action) => {
             return [...state, {
                 title: action.book.title,
                 author: action.book.author,
-                id: uuid()
+                id: uuidv4()
             }]
         case 'REMOVE_BOOK':
-            return state.filter(book => book.id !== action.book.id)
+            return state.filter(book => book.id !== action.id)
     
         default:
             return state
